@@ -1,0 +1,12 @@
+apiVersion: aws.jet.crossplane.io/v1alpha1
+kind: ProviderConfig
+metadata:
+  name: jet-aws-default
+  namespace: crossplane-system
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: crossplane-system
+      name: jet-aws-credentials
+      key: credentials

@@ -1,0 +1,19 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: crossplane-system
+  namespace: flux-system
+spec:
+  interval: 5m0s
+  dependsOn:
+    - name: helm-repositories
+  path: ./infra/crossplane-system
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age

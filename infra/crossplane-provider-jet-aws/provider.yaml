@@ -1,0 +1,9 @@
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: crossplane-provider-jet-aws
+  namespace: crossplane-system
+spec:
+  package: "crossplane/provider-jet-aws:v0.4.2"
+  controllerConfigRef:
+    name: jet-aws-config

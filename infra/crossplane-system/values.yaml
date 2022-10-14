@@ -1,0 +1,5 @@
+deploymentStrategy: RollingUpdate
+image:
+  repository: crossplane/crossplane
+  tag: v1.9.1
+  pullPolicy: Always
